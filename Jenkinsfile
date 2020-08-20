@@ -22,7 +22,7 @@ pipeline {
                   uploadIncludesPattern: "**/twidere/build/outputs/apk/fdroid/debug/twidere-fdroid-debug.apk", \
                   useIDkey: true, \
                   vid: "${VERACODE_API_ID}",  \
-                  vkey: "${VERACODE_API_SECRET}"'
+                  vkey: "${VERACODE_API_SECRET}"
                 }
             }
         stage('Deploy') {
