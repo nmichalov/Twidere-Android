@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'echo y | /usr/local/android-sdk/tools/android'
+                # sh 'echo y | /usr/local/android-sdk/tools/android'
                 sh 'sh gradlew assembleDebug'
             }
         }	
