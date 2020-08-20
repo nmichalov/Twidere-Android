@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'yes | sdkmanager --licenses'
                 // sh 'echo y | /usr/local/android-sdk/tools/android'
                 sh 'sh gradlew assembleDebug'
             }
