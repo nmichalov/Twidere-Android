@@ -1,7 +1,7 @@
 pipeline {
     agent {
       docker {
-          image 'androidsdk/android-26'
+          image 'thyrlian/android-sdk'
         // image 'uber/android-build-environment'
       }
     }
