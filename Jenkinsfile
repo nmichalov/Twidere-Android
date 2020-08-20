@@ -1,7 +1,7 @@
 pipeline {
     agent {
       docker {
-          image 'bitriseio/docker-android'
+          image 'androidsdk/android-26'
         // image 'uber/android-build-environment'
       }
     }
