@@ -16,11 +16,11 @@ pipeline {
          }
         stage('Upload and Scan') {
             steps {
-                  sh 'veracode applicationName: "twidere-android", \
+                  veracode applicationName: "twidere-android", \
                   canFailJob: true, \
                   criticality: "VeryHigh",  \
                   scanName: "jenkins_$buildnumber", \
-                  uploadIncludesPattern: "**/Twidere-Android/twidere/build/outputs/apk/fdroid/debug/twidere-fdroid-debug.apk", \
+                  uploadIncludesPattern: "**/twidere/build/outputs/apk/fdroid/debug/twidere-fdroid-debug.apk", \
                   useIDkey: true, \
                   vid: "${VERACODE_API_ID}",  \
                   vkey: "${VERACODE_API_SECRET}"'
