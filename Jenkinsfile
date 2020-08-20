@@ -6,7 +6,6 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'sh gradlew assembleDebug'
-                sh 'ls -R'
             }
         }	
         stage('SCA') {
