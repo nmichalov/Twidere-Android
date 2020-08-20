@@ -1,7 +1,8 @@
 pipeline {
     agent {
       docker {
-        image 'uber/android-build-environment'
+          image 'bitriseio/docker-android'
+        // image 'uber/android-build-environment'
       }
     }
     stages {
