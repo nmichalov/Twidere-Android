@@ -18,7 +18,7 @@ pipeline {
                   veracode applicationName: "twidere-android", \
                   canFailJob: true, \
                   criticality: "VeryHigh",  \
-                  scanName: "jenkins_$buildnumber", \
+                scanName: "jenkins_${buildnumber}", \
                   uploadIncludesPattern: "**/twidere/build/outputs/apk/fdroid/debug/twidere-fdroid-debug.apk", \
                   useIDkey: true, \
                   vid: "${VERACODE_API_ID}",  \
