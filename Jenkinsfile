@@ -8,7 +8,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'gradlew assembleDebug'
+                sh 'yes | sdkmanager --licenses'
+                sh 'sh gradlew assembleDebug'
             }
         }	
         stage('Security Assessment') {
