@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'gradlew assembleDebug'
+                sh 'sh gradlew assembleDebug'
             }
         }	
         stage('Security Assessment') {
