@@ -15,7 +15,7 @@ pipeline {
          }
         stage('Upload and Scan') {
             steps {
-                    echo 'test'
+                  sh 'veracode applicationName: \'twidere-android\', canFailJob: true, criticality: \'VeryHigh\', fileNamePattern: \'\', replacementPattern: '', sandboxName: '', scanExcludesPattern: '', scanIncludesPattern: '', scanName: '', teams: '', uploadExcludesPattern: '', uploadIncludesPattern: \'jenkins_$buildnumber\', useIDkey: true, vid: "${VERACODE_API_ID}", vkey: "${VERACODE_API_SECRET}"'
                 }
             }
         stage('Deploy') {
