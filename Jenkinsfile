@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'sh gradlew assembleDebug'
+                sh 'ls -R'
             }
         }	
         stage('SCA') {
@@ -15,7 +16,15 @@ pipeline {
          }
         stage('Upload and Scan') {
             steps {
-                  sh 'veracode applicationName: \'twidere-android\', canFailJob: true, criticality: \'VeryHigh\', fileNamePattern: \'\', replacementPattern: '', sandboxName: '', scanExcludesPattern: '', scanIncludesPattern: '', scanName: '', teams: '', uploadExcludesPattern: '', uploadIncludesPattern: \'jenkins_$buildnumber\', useIDkey: true, vid: "${VERACODE_API_ID}", vkey: "${VERACODE_API_SECRET}"'
+                  sh 'veracode applicationName: "twidere-android", \
+                  canFailJob: true, \
+                  criticality: "VeryHigh", \ 
+                  fileNamePattern: "", \
+                  scanName: "jenkins_$buildnumber", \
+                  uploadIncludesPattern: "jenkins_${buildnumber}", \
+                  useIDkey: true, \
+                  vid: "${VERACODE_API_ID}",  \
+                  vkey: "${VERACODE_API_SECRET}"'
                 }
             }
         stage('Deploy') {
