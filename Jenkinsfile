@@ -1,16 +1,10 @@
 pipeline {
-    agent {
-      docker {
-          image 'bilueandroid/android-kotlin'
-        // image 'uber/android-build-environment'
-      }
+    agent any
     }
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'yes | sdkmanager --licenses'
-                // sh 'echo y | /usr/local/android-sdk/tools/android'
                 sh 'sh gradlew assembleDebug'
             }
         }	
